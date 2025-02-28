@@ -9,11 +9,11 @@ KV is a global, low-latency, key-value data store. It stores data in a small num
 
 KV supports exceptionally high read volumes with low latency, making it possible to build highly dynamic APIs.
 
-While reads are periodically revalidated in the background, requests which are not in cache and need to hit the centralized back end can experience high latencies.
+While cached values are periodically revalidated in the background before cache expiry, key-value pairs which are not in cache and need to hit the centralized back end can experience high latencies.
 
 ## Write data to KV and read data from KV
 
-When you write to KV, your data is written to central data stores. Your data is not sent automatically to every location’s cache.
+When you write to KV, your data is written to central data stores. Your data is not sent automatically to every location’s cache. The updated value is pushed to the location in which the write is made, the regional tier cache, and the central tier cache. Other locations will pull the updated values when KV's cached value, if present, expires.    
 
 ![Your data is written to central data stores when you write to KV.](~/assets/images/kv/kv-write.svg)
 
@@ -32,7 +32,7 @@ Refreshing from upper tiers and the central data stores in the background is don
 
 ![As mentioned above, frequent reads will return a cached value.](~/assets/images/kv/kv-fast-read.svg)
 
-KV is optimized for high-read applications. It stores data centrally and uses a hybrid push/pull-based replication to store data in cache. KV is suitable for use cases where you need to write relatively infrequently, but read quickly and frequently. Infrequently read values are pulled from other data centers or the central stores, while more popular values are cached in the data centers they are requested from.
+KV is optimized for high-read applications and is suitable for use cases where you need to write relatively infrequently, but read quickly and frequently. Infrequently read values are pulled from other data centers or the central stores, while more popular values are cached in the data centers they are requested from.
 
 ## Performance
 

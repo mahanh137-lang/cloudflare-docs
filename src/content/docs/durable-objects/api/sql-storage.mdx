@@ -2,26 +2,11 @@
 title: SQL storage
 pcx_content_type: concept
 sidebar:
-  order: 6
+  order: 7
 
 ---
 
 import { Render, Type, MetaInfo, GlossaryTooltip } from "~/components";
-
-The Durable Object Storage API allows <GlossaryTooltip term="Durable Object">Durable Objects</GlossaryTooltip> to access transactional and strongly consistent storage. A Durable Object's attached storage is private to its unique instance and cannot be accessed by other objects.
-
-:::note[Scope of Durable Object storage]
-Note that Durable Object storage is scoped by individual <GlossaryTooltip term="Durable Object">Durable Objects</GlossaryTooltip>.
-
-- An account can have many Durable Object <GlossaryTooltip term="namespace">namespaces</GlossaryTooltip>.
-- A namespace can have many Durable Objects.
-
-However, storage is scoped per individual Durable Object.
-:::
-
-Durable Objects gain access to a persistent Durable Object Storage API via the `DurableObjectStorage` interface and accessed by the `DurableObjectState::storage` property. This is frequently accessed via `this.ctx.storage` when the `ctx` parameter passed to the Durable Object constructor.
-
-JavaScript is a single-threaded and event-driven programming language. This means that JavaScript runtimes, by default, allow requests to interleave with each other which can lead to concurrency bugs. The Durable Objects runtime uses a combination of <GlossaryTooltip term="input gate">input gates</GlossaryTooltip> and <GlossaryTooltip term="output gate">output gates</GlossaryTooltip> to avoid this type of concurrency bug when performing storage operations.
 
 The `SqlStorage` interface encapsulates methods that modify the SQLite database embedded within a Durable Object. The `SqlStorage` interface is accessible via the `sql` property of `DurableObjectStorage` class.
 

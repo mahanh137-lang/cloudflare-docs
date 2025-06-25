@@ -36,9 +36,9 @@ Browser-based RDP can be used in conjunction with [routing over WARP](/cloudflar
 
 ## 3. Create a DNS record
 
-To connect you to your RDP targets (i.e., your Windows machines), configure a DNS record (including the subdomain) that users will connect to RDP targets with. This domain will be used to access any targets that are accessible to users through your Access application (see Step 4).
+To connect to your RDP targets (i.e., your Windows machines), configure a DNS record (including the subdomain) that users will use for RDP connections. This domain will be used to access any targets that are available to users through your Access application (see Step 4).
 
-For example, if your Access application is configured for `rdp.example.com`, you must have an "A" or "AAAA" DNS record for `rdp.example.com` created.
+For example, if your Access application is configured with `rdp.example.com`, you must have an "A" or "AAAA" DNS record for `rdp.example.com` created.
 
 To do this, go to the [Cloudflare dashboard](https://dash.cloudflare.com/login), select your domain, go to **DNS** > **Records** and verify that a [DNS record](/dns/manage-dns-records/how-to/create-dns-records/) exists for your desired RDP domain.
 
@@ -49,7 +49,7 @@ If you do not already have a DNS record, [create a new DNS record](/dns/manage-d
 - **IPv6 address**: `100::`
 - **Proxy status**: On
 
-The domain does not need to point to a valid IP address. Cloudflare's RDP proxy will handle the routing to the correct target machine. The DNS record just has to exist.
+The IP address does not require active use; it just needs to be valid. Cloudflare's RDP proxy will handle the routing to the correct target.
 
 :::note
 		If you choose to create a _CNAME_ DNS record instead, *the Target field must be a fully qualified domain name.* It is *NOT* the target ID that you created in step (2). Using the example above, `rdp` would be the record Name and the Target field would be `www.rdp.example.com`. Proxy status would also need to be set to "On."

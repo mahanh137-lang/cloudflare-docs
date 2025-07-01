@@ -92,6 +92,12 @@ In the following example, the minimum TLS version for a specific hostname will b
 	}}
 />
 
+:::note
+
+Minimum TLS version is set when a certificate is deployed. The zone setting will not override the custom hostname setting because it doesn't re-deploy the custom hostname certificate.
+
+:::
+
 ## Test supported TLS versions
 
 To test supported TLS versions, attempt a request to your website or application while specifying a TLS version.

@@ -71,7 +71,10 @@ const operating_systems: Array<Tag> = [
 	{ label: "Windows", variants: ["ms windows"] },
 ];
 
-const presentation: Array<Tag> = [{ label: "Video" }];
+const presentation: Array<Tag> = [
+	{ label: "Video" },
+	{ label: "Diagram"},
+];
 
 const product_features: Array<Tag> = [
 	{ label: "Web Crypto", variants: ["webcrypto"] },

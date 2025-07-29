@@ -5,16 +5,24 @@ sidebar:
   order: 0
 ---
 
-import { Render } from "~/components";
+import { Render, Tabs, TabItem } from "~/components";
 
-This guide helps you diagnose and resolve common issues with the Cloudflare WARP client. It covers various aspects of WARP's functionality and provides steps for effective troubleshooting.
+This guide helps you diagnose and resolve common issues with the Cloudflare WARP client.
 
 ## Prerequisites
 
-To use this guide, you must have:
+To use this guide, you must have completed the [Zero Trust onboarding flow](/cloudflare-one/setup/) with a Zero Trust organizaton created and the WARP client installed on your device.
 
-- Completed the [Zero Trust onboarding flow](/cloudflare-one/setup/).
-- Question for MM
+## Troubleshooting steps
+
+This guide uses [WARP diagnostic logs](/cloudflare-one/connections/connect-devices/warp/troubleshooting/warp-logs/) to help you verify that your WARP configuration is working as intended.
+
+To troubleshoot if WARP misconfiguration is the source of your issue, you will:
+
+1. Run a remote capture to download WARP diagnostic logs from the Cloudflare dashboard.
+2. Review the best practice to
+3. Check the WARP diagnostic logs to ensure WARP is working according to the configuration you set in the Zero Trust dashboard.
+4. File a support ticket if your configuration looks correct but you are still having issues.
 
 ## WARP basics
 
@@ -85,24 +93,48 @@ Run `warp-cli settings` to review your device’s current WARP mode and other co
 
 :::
 
-## General troubleshooting steps
-
 ## 1. Collect diagnostic logs
 
-You can collect diagnostic logs in two ways: the Cloudflare dashboard or the CLI.
+You can collect diagnostic logs in two ways: the Cloudflare dashboard or the `warp-diag` command-line interface (CLI).
 
 ### Collect logs via the Cloudflare dashboard
 
 For WARP client versions higher than `2024.12.492.0`, you can collect diagnostic logs remotely from the Zero Trust dashboard by using Digital Experience Monitoring's (DEX) remote captures.
 
-<Render file="dex/pcaps-run">
+#### Start a remote capture
 
-:::tip
+<Render file="dex/pcaps-run" />
 
-If you do not require traffic packet capture for debugging, leave **Packet captures (PCAP)** unselected and select only **WARP diagnostics logs**.
+:::tip[Best practice]
 
+To troubleshoot effectively, Cloudflare recommends that you recreate the steps where your issue emerges when capturing logs. Though recreating the issue may not be possible in all cases, the following troubleshooting regimen will ensure the most accurate capture of the state of WARP:
+
+1. In **Zero Trust** > **DEX** > **Remote captures**, select **WARP diagnostic logs** and **Packet captures (PCAP)**. You can leave **Test all routes** unselected.
+2. Select **Run diagnostics**.
+3. While the diagnostics are running on the target device, recreate the steps that cause the problem.
+
+   If you set your **Time limit** on the **Remote captures** page to five minutes, recreate the steps that cause the problem on the target device in that five minute window before logs are generated. Keep timestamps of when you executed your steps to successfully review logs later.
+
+4. [Check the status](/cloudflare-one/connections/connect-devices/warp/troubleshooting/troubleshooting-guide/#check-remote-capture-status) of your remote capture to verify its readiness.
+5. [Download the remote captures](/cloudflare-one/connections/connect-devices/warp/troubleshooting/troubleshooting-guide/#check-remote-capture-status) when they have finished running.
+
+By following these steps, you will ensure that your WARP diagnostic logs have captured WARP activity relevant to your issue.
 :::
 
-### Collects logs via the CLI
+#### Check remote capture status
 
-## 2.
+<Render file="dex/pcaps-check" />
+
+#### Download remote captures
+
+<Render file="dex/pcaps-download" />
+
+### Collect logs via the CLI
+
+To collect WARP diagnostic logs via the `warp-diag` CLI, run:
+
+<Render file="warp/warpdiag-run" />
+
+:::tip[Best practice]
+
+To troubleshoot effectively, Cloudflare recommends that you recreate the steps where your issue emerges before running `warp-diag` and keep timestamps of your steps.

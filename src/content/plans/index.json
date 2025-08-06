@@ -2440,7 +2440,7 @@
 			}
 		},
 		"mirage": {
-			"title": "Mirage",
+			"title": "Mirage (deprecated)",
 			"link": "/speed/optimization/images/mirage/",
 			"properties": {
 				"availability": {
@@ -2785,7 +2785,7 @@
 					"pro": "No",
 					"biz": "No",
 					"ent": "Contact your account team"
-				},				
+				},
 				"custom_certificates": {
 					"title": "[Custom certificates](/cloudflare-for-platforms/cloudflare-for-saas/security/certificate-management/custom-certificates/)",
 					"free": "No",

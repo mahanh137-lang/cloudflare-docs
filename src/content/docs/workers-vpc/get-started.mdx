@@ -10,13 +10,42 @@ import { Render, PackageManagers, Steps, FileTree, Tabs, TabItem, TypeScriptExam
 
 This guide instructs you through:
 
-TBD
+- Creating a private network service
+
 
 ## Prerequisites
 
 <Render file="prereqs" product="workers" />
 
-## 1. TBD
+## 1. Create a private network service
+
+Create a private network service:
+
+```sh
+npx wrangler vpc service create --tunnel-id <ENTER TUNNEL ID> --private-link-service-host <ENTER PRIVATE NETWORK SERVICE HOST>
+```
+
+- Replace `<ENTER TUNNEL ID>` with the ID of the tunnel.
+- Replace `<ENTER PRIVATE NETWORK SERVICE HOST>` with the host of the private network service.
+
+## 2. Add the binding to your Wrangler file
+
+ Once you have created the private network service, you can add the binding to your Workers' Wrangler configuration:
+
+<WranglerConfig>
+```jsonc
+{
+  "name": "WORKER-NAME",
+  "main": "./src/index.js",
+  "services": [
+    {
+      "binding": "AWS_VPC2_ECS_API",
+      "service_id": "5634563546"
+    }
+  ]
+}
+```
+</WranglerConfig>
 
 ## Summary
 

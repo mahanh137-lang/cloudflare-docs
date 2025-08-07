@@ -6,7 +6,7 @@ sidebar:
 head:
   - tag: title
     content: Overview
-description: Connect Cloudflare Worker's Virtual Private Cloud to your private clouds to build cross-cloud apps.
+description: Securely connect your private cloud to Cloudflare to build cross-cloud apps.
 
 ---
 
@@ -14,21 +14,29 @@ import { CardGrid, Description, Feature, LinkTitleCard, Plan, RelatedProduct, Re
 
 <Description>
 
-Connect Cloudflare Worker's Virtual Private Cloud to your private clouds to build cross-cloud apps.
+Securely connect your private cloud to Cloudflare to build cross-cloud apps.
 
 </Description>
 
 <Plan type="workers-all" />
 
+Most services and APIs in external clouds (for example, your private cloud) are not accessible from the public Internet. This can pose a challenge if you are trying to access these resources when developing on Cloudflare's developer platform.
+
+Workers VPC offers private network services, which allows you to establish a private connection from your private network to Cloudflare by creating a tunnel in a private network. This enables you to access services like APIs and databases in your private cloud from your Cloudflare network.
+
 <div>
-  <LinkButton href="/workers-vpc/get-started">Get started</LinkButton>
+  <LinkButton href="/workers-vpc/get-started/">Get started</LinkButton>
 </div>
 
 ***
 
 ## Features
 
-TBC
+<Feature header="Private network services" href="/workers-vpc/features/private-network-services/">
+
+Securely connect services in your private cloud to your Cloudflare network.
+
+</Feature>
 
 ***
 
@@ -42,6 +50,3 @@ Build serverless applications and deploy instantly across the globe for exceptio
 
 ***
 
-## More resources
-
-TBC

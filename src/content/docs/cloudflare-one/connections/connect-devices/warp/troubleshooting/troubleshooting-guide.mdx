@@ -344,12 +344,6 @@ Identity-based selectors are only available if the user [enrolled the device](/c
 
 :::
 
-#### Edit your device profile match rules
-
-To modify the match rules of a device profile, you will need to edit the device profile. To edit the device profile:
-
-<Render file="warp/edit-profile-settings" />
-
 #### Review your managed network settings
 
 A [managed network](/cloudflare-one/connections/connect-devices/warp/configure-warp/managed-networks/) is a network location that you define with a TLS endpoint, like a physical office. The WARP client checks for this TLS endpoint to determine its location and apply the corresponding device profile.
@@ -362,11 +356,25 @@ When troubleshooting WARP for managed network isses:
 
 	The WARP client connects to the TLS endpoint to identify the network. If the endpoint is down or unreachable, the WARP client will fail to detect the network and apply the wrong profile.
 
-	// need instructions on how to do this //
+	<Render file="warp/managed-networks-sha-256" />
+
+	If the endpoint is down, you will receive a `Could not find certificate from <stdin>` response.
+
+	If you received a returned SHA-256 fingerprint:
+
+	1. Log into [Zero Trust](https://one.dash.cloudflare.com/), go to **Settings** > **WARP Client**.
+	2. Go to **Manage Networks** > **Edit**.
+	3. Compare the TLS Cert SHA-256 in the dashboard with the returned fingerprint in your terminal to ensure they match.
 
 2. Use a single profile for a single location.
 
 	To simplify management and prevent errors, avoid creating multiple managed network profiles for the same location. For example, if you have multiple TLS endpoints in one office, link them all to a single device profile. This reduces the risk of a device matching an unintended profile due to a configuration error.
+
+#### Edit your device profile match rules
+
+To modify the match rules of a device profile, you will need to edit the device profile. To edit the device profile:
+
+<Render file="warp/edit-profile-settings" />
 
 ### Wrong split tunnel configuration
 

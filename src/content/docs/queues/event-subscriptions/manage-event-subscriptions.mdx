@@ -1,7 +1,7 @@
 ---
 pcx_content_type: configuration
 title: Manage event subscriptions
-description: Learn how to create, view, and delete event subscriptions for your queues
+description: Learn how to create, view, and delete event subscriptions for your queues.
 sidebar:
   order: 1
 ---
@@ -24,17 +24,17 @@ Creating a subscription allows your queue to receive messages when events occur 
 ### Dashboard
 
 <Steps>
-1. From the Cloudflare dashboard, go to **Storage & Databases** > **Queues**.
+1. Log in to the [Cloudflare dashboard](https://dash.cloudflare.com/), and go to **Compute & AI** > **Queues**.
 2. Select the queue you want to add a subscription to.
 3. Switch to the **Subscriptions** tab.
 4. Select **Subscribe to events**.
-5. Select the desired source and events.
+5. Name your subscription, and select the desired source and events.
 6. Select **Subscribe**.
 </Steps>
 
 ### Wrangler CLI
 
-To create a subscription using Wrangler, run the [`queues subscription create command`](/workers/wrangler/commands/#subscription-create):
+To create a subscription using Wrangler, run the [`queues subscription create command`](/queues/reference/wrangler-commands/#queues-subscription-create):
 
 ```bash
 npx wrangler queues subscription create <queue-name> --source <source-type> --events <event1,event2> --<source-specific-option> <value>
@@ -44,19 +44,19 @@ To learn more about which sources and events you can subscribe to, refer to [Eve
 
 ## View existing subscriptions
 
-You can view all subscriptions configured for a queue to see what events it's currently receiving.
+You can view all subscriptions configured for a queue to see what events it is currently receiving.
 
 ### Dashboard
 
 <Steps>
-1. From the Cloudflare dashboard, go to **Storage & Databases** > **Queues**.
+1. Log in to the [Cloudflare dashboard](https://dash.cloudflare.com/), and go to **Compute & AI** > **Queues**.
 2. Select the queue you want to view subscriptions for.
 3. Switch to the **Subscriptions** tab.
 </Steps>
 
 ### Wrangler CLI
 
-To list subscriptions for a queue, run the [`queues subscription list command`](/workers/wrangler/commands/#subscription-list):
+To list subscriptions for a queue, run the [`queues subscription list command`](/queues/reference/wrangler-commands/#queues-subscription-list):
 
 ```bash
 npx wrangler queues subscription list <queue-name>
@@ -69,7 +69,7 @@ When you delete a subscription, your queue will stop receiving messages for thos
 ### Dashboard
 
 <Steps>
-1. From the Cloudflare dashboard, go to **Storage & Databases** > **Queues**.
+1. Log in to the [Cloudflare dashboard](https://dash.cloudflare.com/), and go to **Compute & AI** > **Queues**.
 2. Select the queue containing the subscription you want to delete.
 3. Switch to the **Subscriptions** tab.
 4. Select **...** for the subscription you want to delete.
@@ -78,7 +78,7 @@ When you delete a subscription, your queue will stop receiving messages for thos
 
 ### Wrangler CLI
 
-To delete a subscription, run the [`queues subscription delete command`](/workers/wrangler/commands/#subscription-delete):
+To delete a subscription, run the [`queues subscription delete command`](/queues/reference/wrangler-commands/#queues-subscription-delete):
 
 ```bash
 npx wrangler queues subscription delete <queue-name> --id <subscription-id>

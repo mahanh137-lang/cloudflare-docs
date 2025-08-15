@@ -16,7 +16,7 @@ This page provides a comprehensive reference of available event sources and thei
 
 #### `bucket.created`
 
-Triggered when a bucket was created.
+Triggered when a bucket is created.
 
 **Example:**
 
@@ -43,7 +43,7 @@ Triggered when a bucket was created.
 
 #### `bucket.deleted`
 
-Triggered when a bucket was deleted.
+Triggered when a bucket is deleted.
 
 **Example:**
 
@@ -70,7 +70,7 @@ Triggered when a bucket was deleted.
 
 #### `job.started`
 
-Triggered when a migration job was started.
+Triggered when a migration job starts.
 
 **Example:**
 
@@ -108,7 +108,7 @@ Triggered when a migration job was started.
 
 #### `job.paused`
 
-Triggered when a migration job was paused.
+Triggered when a migration job pauses.
 
 **Example:**
 
@@ -132,7 +132,7 @@ Triggered when a migration job was paused.
 
 #### `job.resumed`
 
-Triggered when a migration job was resumed.
+Triggered when a migration job resumes.
 
 **Example:**
 
@@ -156,7 +156,7 @@ Triggered when a migration job was resumed.
 
 #### `job.completed`
 
-Triggered when a migration job finished.
+Triggered when a migration job finishes.
 
 **Example:**
 
@@ -184,7 +184,7 @@ Triggered when a migration job finished.
 
 #### `job.aborted`
 
-Triggered when a migration job was manually aborted.
+Triggered when a migration job is manually aborted.
 
 **Example:**
 
@@ -235,7 +235,7 @@ Triggered when a migration job was manually aborted.
 
 #### `index.created`
 
-Triggered when an index was created.
+Triggered when an index is created.
 
 **Example:**
 
@@ -264,7 +264,7 @@ Triggered when an index was created.
 
 #### `index.deleted`
 
-Triggered when an index was deleted.
+Triggered when an index is deleted.
 
 **Example:**
 
@@ -370,7 +370,7 @@ Triggered when a batch request has failed.
 
 #### `build.started`
 
-Triggered when a build was started.
+Triggered when a build starts.
 
 **Example:**
 
@@ -414,7 +414,7 @@ Triggered when a build was started.
 
 #### `build.failed`
 
-Triggered when a build failed.
+Triggered when a build fails.
 
 **Example:**
 
@@ -458,7 +458,7 @@ Triggered when a build failed.
 
 #### `build.canceled`
 
-Triggered when a build was canceled.
+Triggered when a build is canceled.
 
 **Example:**
 
@@ -502,7 +502,7 @@ Triggered when a build was canceled.
 
 #### `build.succeeded`
 
-Triggered when a build completed successfully.
+Triggered when a build succeeds.
 
 **Example:**
 
@@ -548,7 +548,7 @@ Triggered when a build completed successfully.
 
 #### `namespace.created`
 
-Triggered when a namespace was created.
+Triggered when a namespace is created.
 
 **Example:**
 
@@ -573,7 +573,7 @@ Triggered when a namespace was created.
 
 #### `namespace.deleted`
 
-Triggered when a namespace was deleted.
+Triggered when a namespace is deleted.
 
 **Example:**
 
@@ -626,7 +626,7 @@ Triggered when an instance was created and is awaiting execution.
 
 #### `instance.started`
 
-Triggered when an instance started or resumed execution.
+Triggered when an instance starts or resumes execution.
 
 **Example:**
 
@@ -652,7 +652,7 @@ Triggered when an instance started or resumed execution.
 
 #### `instance.paused`
 
-Triggered when an instance paused execution.
+Triggered when an instance pauses execution.
 
 **Example:**
 
@@ -678,7 +678,7 @@ Triggered when an instance paused execution.
 
 #### `instance.errored`
 
-Triggered when an instance step threw an error.
+Triggered when an instance step throws an error.
 
 **Example:**
 
@@ -704,7 +704,7 @@ Triggered when an instance step threw an error.
 
 #### `instance.terminated`
 
-Triggered when an instance was manually terminated.
+Triggered when an instance is manually terminated.
 
 **Example:**
 
@@ -730,7 +730,7 @@ Triggered when an instance was manually terminated.
 
 #### `instance.completed`
 
-Triggered when an instance finished execution successfully.
+Triggered when an instance finishes execution successfully.
 
 **Example:**
 
@@ -764,6 +764,6 @@ All events include these common fields:
 | `source` | object | Contains source-specific information like IDs and names |
 | `metadata.accountId` | string | Your Cloudflare account ID |
 | `metadata.eventSubscriptionId` | string | The subscription that triggered this event |
-| `metadata.eventSchemaVersion` | number | Version of the event schema |
-| `metadata.eventTimestamp` | string | ISO 8601 timestamp when the event occurred |
-| `payload` | object | Event-specific data containing details about what happened |
+| `metadata.eventSchemaVersion` | number | The version of the event schema |
+| `metadata.eventTimestamp` | string | The ISO 8601 timestamp when the event occurred |
+| `payload` | object | The event-specific data containing details about what happened |

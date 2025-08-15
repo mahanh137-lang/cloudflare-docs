@@ -4,11 +4,7 @@
 
 import { Render, AnchorHeading, Type, MetaInfo } from "~/components";
 
-## `queues`
-
-Manage your Workers [Queues](/queues/) configurations.
-
-### `create`
+<AnchorHeading title="`create`" slug="queues-create" depth={3} />
 
 Create a new queue.
 
@@ -25,7 +21,7 @@ wrangler queues create <name> [OPTIONS]
 
 <Render file="wrangler-commands/global-flags" product="workers" />
 
-### `update`
+<AnchorHeading title="`update`" slug="queues-update" depth={3} />
 
 Update an existing queue.
 
@@ -42,7 +38,7 @@ wrangler queues update <name> [OPTIONS]
 
 <Render file="wrangler-commands/global-flags" product="workers" />
 
-### `delete`
+<AnchorHeading title="`delete`" slug="queues-delete" depth={3} />
 
 Delete an existing queue.
 
@@ -55,7 +51,7 @@ wrangler queues delete <name> [OPTIONS]
 
 <Render file="wrangler-commands/global-flags" product="workers" />
 
-### `list`
+<AnchorHeading title="`list`" slug="queues-list" depth={3} />
 
 List all queues in the current account.
 
@@ -65,7 +61,7 @@ wrangler queues list [OPTIONS]
 
 <Render file="wrangler-commands/global-flags" product="workers" />
 
-### `info`
+<AnchorHeading title="`info`" slug="queues-info" depth={3} />
 
 Get information on individual queues.
 
@@ -76,11 +72,11 @@ wrangler queues info <name>
 - `name` <Type text="string" /> <MetaInfo text="required" />
   - The name of the queue to inspect.
 
-### `consumer`
+<AnchorHeading title="`consumer`" slug="queues-consumer" depth={3} />
 
 Manage queue consumer configurations.
 
-### `consumer add <script-name>`
+<AnchorHeading title="`consumer add <script-name>`" slug="queues-consumer-add-script-name" depth={3} />
 
 Add a Worker script as a [queue consumer](/queues/reference/how-queues-works/#consumers).
 
@@ -105,7 +101,7 @@ wrangler queues consumer add <queue-name> <script-name> [OPTIONS]
 
 <Render file="wrangler-commands/global-flags" product="workers" />
 
-### `consumer remove`
+<AnchorHeading title="`consumer remove`" slug="queues-consumer-remove" depth={3} />
 
 Remove a consumer from a queue.
 
@@ -120,7 +116,7 @@ wrangler queues consumer remove <queue-name> <script-name>
 
 <Render file="wrangler-commands/global-flags" product="workers" />
 
-### `purge`
+<AnchorHeading title="`purge`" slug="queues-purge" depth={3} />
 
 Permanently delete all messages in a queue.
 
@@ -131,7 +127,7 @@ wrangler queues purge <queue-name>
 - `queue-name` <Type text="string" /> <MetaInfo text="required" />
   - The name of the queue from which messages should be deleted.
 
-### `pause-delivery`
+<AnchorHeading title="`pause-delivery`" slug="queues-pause-delivery" depth={3} />
 
 Pause message delivery from a Queue to consumers (including push consumers, and HTTP pull consumers)
 
@@ -142,7 +138,7 @@ wrangler queues pause-delivery <queue-name>
 - `queue-name` <Type text="string" /> <MetaInfo text="required" />
   - The name of the queue which delivery should be paused.
 
-### `resume-delivery`
+<AnchorHeading title="`resume-delivery`" slug="queues-resume-delivery" depth={3} />
 
 Resume delivery from a Queue to consumers (including push consumers, and HTTP pull consumers)
 
@@ -153,7 +149,7 @@ wrangler queues resume-delivery <queue-name>
 - `queue-name` <Type text="string" /> <MetaInfo text="required" />
   - The name of the queue from which delivery should be resumed.
 
-### `subscription create`
+<AnchorHeading title="`subscription create`" slug="queues-subscription-create" depth={3} />
 
 Create a new [event subscription](/queues/event-subscriptions/) for a queue.
 
@@ -175,7 +171,7 @@ wrangler queues subscription create <queue-name> [OPTIONS]
 
 <Render file="wrangler-commands/global-flags" product="workers" />
 
-### `subscription list`
+<AnchorHeading title="`subscription list`" slug="queues-subscription-list" depth={3} />
 
 List all [event subscriptions](/queues/event-subscriptions/) for a queue.
 
@@ -194,7 +190,7 @@ wrangler queues subscription list <queue-name> [OPTIONS]
 
 <Render file="wrangler-commands/global-flags" product="workers" />
 
-### `subscription get`
+<AnchorHeading title="`subscription get`" slug="queues-subscription-get" depth={3} />
 
 Get details about a specific [event subscription](/queues/event-subscriptions/).
 
@@ -211,7 +207,7 @@ wrangler queues subscription get <queue-name> [OPTIONS]
 
 <Render file="wrangler-commands/global-flags" product="workers" />
 
-### `subscription update`
+<AnchorHeading title="`subscription update`" slug="queues-subscription-update" depth={3} />
 
 Update an existing [event subscription](/queues/event-subscriptions/).
 
@@ -234,7 +230,7 @@ wrangler queues subscription update <queue-name> [OPTIONS]
 
 <Render file="wrangler-commands/global-flags" product="workers" />
 
-### `subscription delete`
+<AnchorHeading title="`subscription delete`" slug="queues-subscription-delete" depth={3} />
 
 Delete an [event subscription](/queues/event-subscriptions/).
 
